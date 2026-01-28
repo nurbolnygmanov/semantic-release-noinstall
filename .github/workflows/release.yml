@@ -1,0 +1,47 @@
+name: Release (With Install)
+
+on:
+  workflow_dispatch:
+    inputs:
+      dryRun:
+        description: "Dry run the release"
+        required: true
+        type: boolean
+        default: false
+
+jobs:
+  release:
+    permissions:
+      contents: write # cycjimmy/semantic-release-action
+
+    runs-on: ubuntu-latest
+    outputs:
+      new_release_published: ${{ steps.semantic_release.outputs.new_release_published }}
+      new_release_version: ${{ steps.semantic_release.outputs.new_release_version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Semantic Release
+        id: semantic_release
+        uses: cycjimmy/semantic-release-action@v6
+        with:
+          semantic_version: 24.0.0
+          dry_run: ${{ inputs.dryRun }}
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+            conventional-changelog-conventionalcommits
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Log semantic-release outputs
+        run: |
+          echo "new_release_published='${{ steps.semantic_release.outputs.new_release_published }}'"
+          echo "new_release_version='${{ steps.semantic_release.outputs.new_release_version }}'"
