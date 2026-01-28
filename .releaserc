@@ -7,7 +7,7 @@
       "./semantic-release-filter-author.js",
       {
         "excludeAuthors": [
-          "nurbol7@gmail.com"
+          "nurbolnygmanov@gmail.com"
         ],
         "wrappedConfig": {
           "preset": "conventionalcommits"
