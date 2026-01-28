@@ -8,10 +8,7 @@
       {
         "excludeAuthors": [
           "nurbolnygmanov@gmail.com"
-        ],
-        "wrappedConfig": {
-          "preset": "conventionalcommits"
-        }
+        ]
       }
     ],
     [

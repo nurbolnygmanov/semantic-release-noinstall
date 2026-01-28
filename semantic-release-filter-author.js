@@ -51,11 +51,11 @@ async function analyzeCommits(pluginConfig, context) {
 
   // Load and call the actual commit analyzer
   const commitAnalyzer = require("@semantic-release/commit-analyzer");
-  const wrappedConfig = pluginConfig.wrappedConfig || {
+  const analyzerConfig = {
     preset: "conventionalcommits",
   };
 
-  return await commitAnalyzer.analyzeCommits(wrappedConfig, wrappedContext);
+  return await commitAnalyzer.analyzeCommits(analyzerConfig, wrappedContext);
 }
 
 async function generateNotes(pluginConfig, context) {
@@ -80,14 +80,16 @@ async function generateNotes(pluginConfig, context) {
 
   // Load and call the actual release notes generator
   const releaseNotesGenerator = require("@semantic-release/release-notes-generator");
-  const wrappedConfig = pluginConfig.wrappedConfig || {
+  const notesConfig = {
     preset: "conventionalcommits",
+    presetConfig: {
+      preset: {
+        name: "conventionalchangelog",
+      },
+    },
   };
 
-  return await releaseNotesGenerator.generateNotes(
-    wrappedConfig,
-    wrappedContext,
-  );
+  return await releaseNotesGenerator.generateNotes(notesConfig, wrappedContext);
 }
 
 module.exports = { analyzeCommits, generateNotes };
