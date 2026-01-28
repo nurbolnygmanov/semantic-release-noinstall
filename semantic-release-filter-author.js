@@ -50,23 +50,7 @@ async function analyzeCommits(pluginConfig, context) {
   const wrappedContext = { ...context, commits: filteredCommits };
 
   // Load and call the actual commit analyzer
-  // Try multiple paths to find the module (action directory or project directory)
-  let commitAnalyzer;
-  try {
-    commitAnalyzer = require("@semantic-release/commit-analyzer");
-  } catch (e) {
-    // If not found in normal path, try to resolve from semantic-release's location
-    const path = require("path");
-    const semanticReleasePath = require.resolve("semantic-release");
-    const actionNodeModules = path.join(
-      path.dirname(semanticReleasePath),
-      "..",
-    );
-    commitAnalyzer = require(
-      path.join(actionNodeModules, "@semantic-release/commit-analyzer"),
-    );
-  }
-
+  const commitAnalyzer = require("@semantic-release/commit-analyzer");
   const wrappedConfig = pluginConfig.wrappedConfig || {
     preset: "conventionalcommits",
   };
@@ -95,23 +79,7 @@ async function generateNotes(pluginConfig, context) {
   const wrappedContext = { ...context, commits: filteredCommits };
 
   // Load and call the actual release notes generator
-  // Try multiple paths to find the module (action directory or project directory)
-  let releaseNotesGenerator;
-  try {
-    releaseNotesGenerator = require("@semantic-release/release-notes-generator");
-  } catch (e) {
-    // If not found in normal path, try to resolve from semantic-release's location
-    const path = require("path");
-    const semanticReleasePath = require.resolve("semantic-release");
-    const actionNodeModules = path.join(
-      path.dirname(semanticReleasePath),
-      "..",
-    );
-    releaseNotesGenerator = require(
-      path.join(actionNodeModules, "@semantic-release/release-notes-generator"),
-    );
-  }
-
+  const releaseNotesGenerator = require("@semantic-release/release-notes-generator");
   const wrappedConfig = pluginConfig.wrappedConfig || {
     preset: "conventionalcommits",
   };
