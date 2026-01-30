@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/nurbolnygmanov/semantic-release-noinstall/compare/v1.0.1...v1.1.0) (2026-01-30)
+
+### Release
+
+* only this will be released ([8ef6878](https://github.com/nurbolnygmanov/semantic-release-noinstall/commit/8ef68788327822e32e5da1b2c475fbc2ba437a7b))
+
 ## [1.0.1](https://github.com/nurbolnygmanov/semantic-release-noinstall/compare/v1.0.0...v1.0.1) (2026-01-28)
 
 ### Bug Fixes
