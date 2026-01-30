@@ -24,18 +24,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-
-      - name: Install semantic-release plugins
-        run: |
-          npm install --no-save \
-            @semantic-release/commit-analyzer \
-            @semantic-release/release-notes-generator \
-            conventional-changelog-conventionalcommits
-
       - name: Semantic Release
         id: semantic_release
         uses: cycjimmy/semantic-release-action@v6

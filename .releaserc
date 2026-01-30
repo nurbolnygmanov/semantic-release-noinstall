@@ -4,11 +4,53 @@
   ],
   "plugins": [
     [
-      "./semantic-release-filter-author.js",
+      "@semantic-release/commit-analyzer",
       {
-        "excludeAuthors": [
-          "nurbolnygmanov@gmail.com"
+        "preset": "conventionalcommits",
+        "releaseRules": [
+          {
+            "type": "release",
+            "release": "minor"
+          },
+          {
+            "type": "feat",
+            "release": false
+          },
+          {
+            "type": "fix",
+            "release": false
+          },
+          {
+            "type": "chore",
+            "release": false
+          }
         ]
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits",
+        "presetConfig": {
+          "types": [
+            {
+              "type": "release",
+              "section": "Release"
+            },
+            {
+              "type": "feat",
+              "hidden": true
+            },
+            {
+              "type": "fix",
+              "hidden": true
+            },
+            {
+              "type": "chore",
+              "hidden": true
+            }
+          ]
+        }
       }
     ],
     [

@@ -1,0 +1,31 @@
+{
+  "branches": [
+    "main"
+  ],
+  "plugins": [
+    [
+      "./semantic-release-filter-author.js",
+      {
+        "excludeAuthors": [
+          "nurbolnygmanov@gmail.com"
+        ]
+      }
+    ],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version} \n\n${nextRelease.notes}"
+      }
+    ],
+    "@semantic-release/github"
+  ]
+}
