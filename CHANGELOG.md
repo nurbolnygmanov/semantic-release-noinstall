@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/nurbolnygmanov/semantic-release-noinstall/compare/v1.1.0...v1.2.0) (2026-01-31)
+
+### Release
+
+* see release ([69c29e1](https://github.com/nurbolnygmanov/semantic-release-noinstall/commit/69c29e105700f913a7ce883e38e47de859b4e192))
+
 ## [1.1.0](https://github.com/nurbolnygmanov/semantic-release-noinstall/compare/v1.0.1...v1.1.0) (2026-01-30)
 
 ### Release
