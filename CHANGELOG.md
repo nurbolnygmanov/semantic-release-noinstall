@@ -1,3 +1,7 @@
+## [1.5.0](https://github.com/nurbolnygmanov/semantic-release-noinstall/compare/v1.4.0...v1.5.0) (2026-01-31)
+
+* perf ok test revert ignored ([026e4cb](https://github.com/nurbolnygmanov/semantic-release-noinstall/commit/026e4cb25995865536dbeb90ed1c6266bb6975c2))
+
 ## [1.4.0](https://github.com/nurbolnygmanov/semantic-release-noinstall/compare/v1.3.0...v1.4.0) (2026-01-31)
 
 * perf to release minor ([3695ec0](https://github.com/nurbolnygmanov/semantic-release-noinstall/commit/3695ec0165c4dc3134401e41d4c8bf406a1d5df8))
