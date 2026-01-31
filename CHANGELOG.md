@@ -1,3 +1,12 @@
+## [1.3.0](https://github.com/nurbolnygmanov/semantic-release-noinstall/compare/v1.2.0...v1.3.0) (2026-01-31)
+
+### ⚠ BREAKING CHANGES
+
+* ignored
+
+* ignored ([5f54850](https://github.com/nurbolnygmanov/semantic-release-noinstall/commit/5f5485081f9bade76df1e755712db769a9e6e9e6))
+* will trigger minor ([bfbdee2](https://github.com/nurbolnygmanov/semantic-release-noinstall/commit/bfbdee29de8decec8bfd55dfab9d4e8ac4a1e83b))
+
 ## [1.2.0](https://github.com/nurbolnygmanov/semantic-release-noinstall/compare/v1.1.0...v1.2.0) (2026-01-31)
 
 ### Release
