@@ -9,10 +9,6 @@
         "preset": "conventionalcommits",
         "releaseRules": [
           {
-            "type": "release",
-            "release": "minor"
-          },
-          {
             "type": "feat",
             "release": false
           },
@@ -23,6 +19,10 @@
           {
             "type": "chore",
             "release": false
+          },
+          {
+            "type": "perf",
+            "release": "minor"
           }
         ]
       }
@@ -34,10 +34,6 @@
         "presetConfig": {
           "types": [
             {
-              "type": "release",
-              "section": "Release"
-            },
-            {
               "type": "feat",
               "hidden": true
             },
@@ -48,6 +44,10 @@
             {
               "type": "chore",
               "hidden": true
+            },
+            {
+              "type": "perf",
+              "hidden": false
             }
           ]
         }
