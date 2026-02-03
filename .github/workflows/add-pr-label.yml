@@ -1,0 +1,13 @@
+name: Add PR Label
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  add-pr-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add PR Label
+        run: |
+          gh pr edit ${{ github.event.pull_request.number }} --add-label "frontend"
