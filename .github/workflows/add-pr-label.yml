@@ -8,6 +8,9 @@ jobs:
   add-pr-label:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      
       - name: Add PR Label
         env:
           GH_TOKEN: ${{ github.token }}
