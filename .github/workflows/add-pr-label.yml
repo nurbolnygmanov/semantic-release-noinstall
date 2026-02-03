@@ -1,20 +1,15 @@
 name: Add PR Label
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened]
 
 jobs:
   add-pr-label:
-    permissions:
-      pull-requests: write
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-      
       - name: Add PR Label
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh pr edit ${{ github.event.pull_request.number }} --add-label "frontend"
+          gh pr edit ${{ github.event.pull_request.number }} --add-label "frontend" --repo ${{ github.repository }}
